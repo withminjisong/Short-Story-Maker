@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Short Story Maker</title>
+    </head>
+    <body>
+        <h1>Short Story Theme</h1>
+        <form method="POST" action="/generate">
+            <label for="keyword">Keyword:</label>
+            <input type="text" name="keyword" id="keyword">
+            <br>
+            <input type="submit" value="Generate">
+        </form>
+        {% if generated_text %}
+        <hr>
+        <h2>Generated Story:</h2>
+        <p>{{ generated_text | safe }}</p>
+        {% endif %}
+    </body>
+</html>
